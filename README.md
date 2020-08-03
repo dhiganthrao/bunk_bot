@@ -1,11 +1,16 @@
 <h2 align = 'center'>THE BUNK BOT</h2>
 
-[![HitCount](http://hits.dwyl.com/sujaysathya/bunk_bot.svg?style=flat)](http://hits.dwyl.com/sujaysathya/bunk_bot) ![language python](https://img.shields.io/badge/Language-Python-blue) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?)](https://github.com/sujaysathya/bunk_bot/issues) [![GitHub stars](https://img.shields.io/github/stars/sujaysathya/bunk_bot?color=green)](https://github.com/sujaysathya/bunk_bot/stargazers) [![GitHub forks](https://img.shields.io/github/forks/sujaysathya/bunk_bot?color=green)](https://github.com/sujaysathya/bunk_bot/network) [![GitHub issues](https://img.shields.io/github/issues/sujaysathya/bunk_bot)](https://github.com/sujaysathya/bunk_bot/issues) 
+[![HitCount](http://hits.dwyl.com/sujaysathya/bunk_bot.svg?style=flat)](http://hits.dwyl.com/sujaysathya/bunk_bot)
+![Python 3.8.5](https://img.shields.io/badge/Python-3.8.5-blue?style=flat&logo=python)
+[![GitHub stars](https://img.shields.io/github/stars/sujaysathya/bunk_bot?color=green)](https://github.com/sujaysathya/bunk_bot/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/sujaysathya/bunk_bot?color=green)](https://github.com/sujaysathya/bunk_bot/network)
+[![GitHub issues](https://img.shields.io/github/issues/sujaysathya/bunk_bot)](https://github.com/sujaysathya/bunk_bot/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?)](https://github.com/sujaysathya/bunk_bot/issues)
 
 
 <p>The <b><i>Bunk Bot</i></b> is built on Python and its main purpose is to attend your online classes <i>for you</i>.
  
-This bot gets the meeting ID of your meeting from Google Docs (note that you need a friend to upload this for you) and opens Google Meet and logs in on your behalf.
+This bot gets the meeting ID of your meeting from Google Docs (note: your friend can upload this for you if you can't) and opens Google Meet and logs in on your behalf.
 
 It can use both Speech Recognition and Image Processing techniques to interact with other people in the meeting.
 
@@ -53,15 +58,34 @@ View the documentation [here.](https://pypi.org/project/SpeechRecognition/)
 9) <b>PyAudio:</b>
 Used to access the microphone.
 View the documentation [here.](https://people.csail.mit.edu/hubert/pyaudio/docs/)
+#### Compatibility:
 
+Changing the coordinates in PyAutoGUI is more than enough to implement this code on Google Meet, Zoom Meetings, Microsoft Teams or any other software you use to attend class.<br>
+
+
+#### CHANGES YOU HAVE TO MAKE:
+
+<p>A small amount of the code you see in this repository is hardcoded w.r.t to my computer.
+Changes that you have to make to implement this on your computer are:<p\>
+
+1) Change all the coordinates that PyAutoGUI uses. Refer to `coordinate_finder.py` to find the coordinates which are suitable for you (if you didn't understand any of this, please read the PyAutoGUI documentation).<br>
+2) Change all the file paths.<br>
+3) Change the size of the crop in `crop=img1[280:911,1520:1900]` to `crop=img1[y1:y2,x1:x2]` where `x1`, `x2`, `y1` and `y2` are coordinates of the chatbox in the online classroom software (i.e Google Meet/ Zoom etc.)<br>
+
+These changes can be made in the global variables that is mentioned in the bunk_bot.py file. Can be found in the 15th line.
+
+#### Fixes and Patches:
+1)An unknown exception thrown during image processing has been handled.<br>  
+2)circular import error has been fixed 
 
 #### Places to improve:
-Currently planning on making a chat bot which can hopefully have full fleged conversations.\
+Currently planning on making a ChatBot which can hopefully have full fleged conversations.\
+You can provide your suggestions on this [here.](https://github.com/sujaysathya/bunk_bot/issues/5)\
 Please contribute and make this better lads.
 
 <h3>PLEASE NOTE:</h3>
 <p>For legal reasons,<br>
-This bot was purely made for <b><i>eductional</i></b> purposes only and is meant as a fun way to learn and implement the libraries/packages mentioned above. <br>
+This bot was purely made for <b><i>educational</i></b> purposes only and is meant as a fun way to learn and implement the libraries/packages mentioned above. <br>
 This bot is not meant to be used in any malicious way and we are not responsible for anyone actually using this bot to wrongfully attend online classes on his/her/their behalf.</p>
 
 
